@@ -1,0 +1,228 @@
+<html>
+
+<head>
+<title> Pizza Order Form</title>
+<script language="javascript" type="text/javascript">
+	
+	
+	function show_hide() 
+	{
+		var div_ref = document.all("box2");
+		var delivery = document.getElementById("receive").value;
+		if (delivery != "delivered")
+			{ div_ref.style.visibility = "hidden";
+			}
+		else
+			{ div_ref.style.visibility = "visible";
+			}
+	}
+	
+	function order()
+	{	
+		var cost=0;	
+
+	//Name
+		var fname = document.getElementById("full_name").value;
+		if (fname == "")
+			{ alert ("Please enter your name.");
+			return;
+			}
+		var phone_number = document.getElementById("number").value;
+		if (document.getElementById("number").value.search(/\d{3}\-\d{3}\-\d{4}/)==-1)
+			{ 
+			alert("Please enter a valid phone number with the format XXX-XXX-XXXX.");
+			return;
+			}
+
+	//Size
+		var size = document.getElementsByName("size");
+		var size_check;
+		if (size[0].checked==true)
+			{ size_check = size[0].value;
+			cost=cost+4.0;
+			}
+		if (size[1].checked==true)
+			{ size_check = size[1].value;
+			cost=cost+5.0;
+			}
+		if (size[2].checked==true)
+			{ size_check = size[2].value;
+			cost=cost+6.0;
+			}
+		if (size[3].checked==true)
+			{ size_check = size[3].value;
+			cost=cost+7.0;
+			}
+
+	//Toppings
+		var toppings_number=0;
+		var toppings = "";
+		var toppings_check = document.getElementById("cheese");
+			if (toppings_check.checked==true)
+			{ toppings = toppings + " " + toppings_check.value;
+			cost=cost+2.0;
+			toppings_number=toppings_number+1;
+			}
+		toppings_check = document.getElementById("extra cheese");
+			if (toppings_check.checked==true)
+			{ toppings = toppings + " " + toppings_check.value;
+			cost=cost+1.0;
+			toppings_number=toppings_number+1;
+			}
+		toppings_check = document.getElementById("pepperoni");
+			if (toppings_check.checked==true)
+			{ toppings = toppings + " " + toppings_check.value;
+			cost=cost+1.0;
+			toppings_number=toppings_number+1;
+			}
+		toppings_check = document.getElementById("mushrooms");
+			if (toppings_check.checked==true)
+			{ toppings = toppings + " " + toppings_check.value;
+			cost=cost+1.0;
+			toppings_number=toppings_number+1;
+			}
+		toppings_check = document.getElementById("olives");
+			if (toppings_check.checked==true)
+			{ toppings = toppings + " " + toppings_check.value;
+			cost=cost+1.0;
+			toppings_number=toppings_number+1;
+			}
+		toppings_check = document.getElementById("anchovies");
+			if (toppings_check.checked==true)
+			{ toppings = toppings + " " + toppings_check.value;
+			cost=cost+1.0;
+			toppings_number=toppings_number+1;
+			}
+		if (toppings == "")
+			{ toppings = toppings + "out toppings";
+			}
+		if (toppings_number>4)
+			{ alert ("We are terribly sorry, but please limit your toppings to 4 or less. Don't blame us, blame the recession.")
+				return;
+			}
+
+	//Receiving order (with optional address)
+		var delivery = document.getElementById("receive").value;
+		var address = document.getElementById("address").value;
+		if (delivery == "delivered" && address == "")
+			{ alert ("Please enter the address for the delivery.")
+				return;
+			}
+
+	//Comments
+		var add_comments = document.getElementById("comments").value;
+		if (add_comments != "")
+			{ add_comments = " We will take your additional comments into consideration."
+			}
+	//Complete Alert
+		if (delivery == "delivered" && cost >= 10)
+			{ submit=window.confirm("Order Complete! So, your name is "+fname+", your address is "+address+", and your phone number is "+phone_number+". You ordered a size "+size_check+" pizza with"+toppings+" and nothing else. You chose to have the pizza delivered to you. The total cost should be $"+cost+".00. Considering your location and order size, the ETA of the delivery should be about 25 minutes."+add_comments+" \n\nIs this order ok?");
+			if (submit==true)
+				{ alert("Order Submitted! Thank you for dining at London Pizzaria.")
+				}
+			}
+		else if (delivery == "delivered" && cost < 10)
+			{  submit=window.confirm("Order Complete! So, your name is "+fname+", your address is "+address+", and your phone number is "+phone_number+". You ordered a size "+size_check+" pizza with"+toppings+" and nothing else. You chose to have the pizza delivered to you. The total cost should be $"+cost+".00. Considering your location and order size, the ETA of the delivery should be about 15 minutes."+add_comments+" \n\nIs this order ok?");
+			if (submit==true)
+				{ alert("Order Submitted! Thank you for dining at London Pizzaria.")
+				}	
+			}
+		else if (delivery == "empty")
+			{ alert ("Please choose how you receive your order.")
+			}
+		else
+			{ submit=window.confirm("Order Complete! So, your name is "+fname+" and your phone number is "+phone_number+". You ordered a size "+size_check+" pizza with"+toppings+" and nothing else. You chose to "+delivery+" here. The total cost should be $"+cost+".00."+add_comments+" \n\nIs this order ok?");
+			if (submit==true)
+				{ alert("Order Submitted! Thank you for dining at London Pizzaria.")
+				}
+			}
+			
+	}
+
+</script>
+<style>
+<!--
+a:link{
+		color: #FFFFFF;
+	}
+	a:visited{
+		color: #FFFFFF;
+	}
+-->
+</style>
+</head>
+<font color="FFFFFF">
+<body background="Background_gradient.jpg">
+<body bgcolor="CC3300">
+
+<center><a href="About Us.html"><img src="Logo.png"></a><br><font face="comic sans MS" size=+2>
+53 East Main Street<br>
+Lititz, PA 17543<br>
+(717) 627- 4411</font><br>
+<font size=+5><b>Homepage</b></font></center><br><br>
+<font size=+1 face="MS Reference Sans Serif">Please provide your information:</font><br>
+Name: &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<input type "text" name="full_name" id="full_name"><br>
+Phone Number: <input type "text" name="PhoneNumber" id="number"><br><br>
+
+<font size=+1 face="MS Reference Sans Serif">What size would you like your pizza to be?</font></center>
+<table border="2" Bordercolor="Black" color="white">
+<tr>
+<td bgcolor="000000">
+<font color="FFFFFF"><b><h3><span title="6 in."><img src="Size_Small.png"></span>
+<td bgcolor="000000">
+<font color="FFFFFF"><b><h3><span title="8 in."><img src="Size_Medium.png"></span>
+<td bgcolor="000000">
+<font color="FFFFFF"><b><h3><span title="10 in."><img src="Size_Large.png"></span>
+<td bgcolor="000000">
+<font color="FFFFFF"><b><h3><span title="12 in."><img src="Size_Xtra.png"></span>
+</tr>
+<tr>
+<td bgcolor="000000"><center><span title="6 in."><input type="radio" name="size" value="small"></span</center>
+<td bgcolor="000000"><center><span title="8 in."><input type="radio" name="size" value="medium"></span></center>
+<td bgcolor="000000"><center><span title="10 in."><input type="radio" name="size" value="large" checked="checked"></span></center>
+<td bgcolor="000000"><center><span title="12 in."><input type="radio" name="size" value="xtra large"></span></center>
+</tr>
+</table><br><br>
+
+<font size=+1 face="MS Reference Sans Serif">What would you like as your toppings?</font><br>
+	<input type="checkbox" name="ta" value="cheese," id="cheese">Cheese<br>
+	<input type="checkbox" name="tb" value="xtra cheese," id="extra cheese">Xtra Cheese<br>
+	<input type="checkbox" name="tc" value="pepperoni," id="pepperoni">Pepperoni<br>
+	<input type="checkbox" name="td" value="mushrooms," id="mushrooms">Mushrooms<br>
+	<input type="checkbox" name="td" value="olives," id="olives">Olives<br>
+	<input type="checkbox" name="td" value="anchovies," id="anchovies">Anchovies<br><br>
+
+<font size=+1 face="MS Reference Sans Serif">How would you like to receive your order?</font><br><select name="receive" id="receive" onchange="show_hide();"> <br>
+	<option value="empty"> Select an answer </option><br>
+	<option value="eat">Dine-in</option><br>
+	<option value="pick up your pizza">Pickup</option><br>
+	<option value="delivered" onclick="show/hide();">Delivery</option><br>
+</select><br><br>
+
+<div id="box2" style="visibility:hidden;">
+Street Address:&nbsp;&nbsp;<input type "text" name="address" id="address"></div><br>
+
+<font size=+1 face="MS Reference Sans Serif">Additional Comments/Directions:</font><br>
+<textarea id="comments" name="comments" rows="8" cols="50">
+</textarea><br>
+<input type="image" value="Submit" id="Submit Order" src="Submit Order.png" onmouseover="this.src='Submit Order_Over.png';" onmouseout="this.src='Submit Order.png';" onmousedown="this.src='Submit Order_Click.png';" OnClick="order();"><br><br>
+
+<table style="color:#000">
+<table border=0 cellpadding=0 cellspacing=1px style="border-left:0px solid #000; border-right:0px solid #000; color:#000">
+<tr>
+<td colspan="3" valign="bottom"><font color="FFFFFF"><h3><font face="MS Reference Sans Serif">Manager Informaton</h3>
+</tr>
+<tr>
+<td><font color="FFFFFF" rowspan="2">Mario London:  &nbsp;&nbsp;</td>
+<td><font color="FFFFFF"> Phone: </td>
+<td><font color="FFFFFF">(847)-214-9052
+</tr>
+<tr>
+<td></td>
+<td><font color="FFFFFF"> Email: </td>
+<td><font color="FFFFFF"><a href="mariolondon@lonpizza.com/">mariolondon@lonpizza.com</a></td>
+</tr>
+</table>
+</body>
+</html>
+

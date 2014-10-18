@@ -1,0 +1,237 @@
+<html>
+<head>
+<title>Campus Tours Form</title>
+<script>
+	
+	function form()
+	{
+	//Name
+		var surname = document.getElementById("surname").value;
+		if (surname == "")
+			{ alert ("Please enter your surname.");
+			return;
+			}
+		var fname = document.getElementById("fname").value;
+		if (fname == "")
+			{ alert ("Please enter your first name.");
+			return;
+			}
+	//Date
+		var day = document.getElementById("day").value;
+		if (day == "empty")
+			{ alert ("Please enter the day of your birth.");
+			return;
+			}
+		var month = document.getElementById("month").value;
+		if (month == "empty")
+			{ alert ("Please enter the month of your birth.");
+			return;
+			}
+		var year = document.getElementById("year").value;
+		if (year == "empty")
+			{ alert ("Please enter the year of your birth.");
+			return;
+			}
+	//Email
+		var email = document.getElementById("email").value;
+		if (email == "")
+			{ alert ("Please enter your email address.");
+			return;
+			}
+	//Phone Number
+		if (document.getElementById("number").value.search(/\d{3}\-\d{3}\-\d{4}/)==-1)
+			{ 
+			alert("Please enter a valid phone number with the format XXX-XXX-XXXX.");
+			return;
+			}
+	//Address
+		var address = document.getElementById("address").value;
+		if (address == "")
+			{ alert ("Please enter your full postal address.");
+			return;
+			}
+	//Tour Date
+		var tour_date = document.getElementsByName("tour_date");
+		var date_check;
+		if (tour_date[0].checked==true)
+			{ date_check = tour_date[0].value;
+			}
+		else
+			{ alert ("Please choose the available date that you will visit.");
+			return;
+			}	
+	//Guests
+		var guests = document.getElementsByName("guests");
+		var guests_number;
+		if (guests[0].checked==true)
+			{ guests_number = guests[0].value;
+			}
+		if (guests[1].checked==true)
+			{ guests_number = guests[1].value;
+			}
+		if (guests[0].checked==false && guests[1].checked==false)
+			{ alert ("Please choose the amount of guests you will bring.");
+			return;
+			}
+	//Mailing List
+		var mail_list = document.getElementsByName("mail");
+		var mailing_check;
+		if (mail_list[0].checked==true)
+			{ mailing_check = mail_list[0].value;
+			}
+		if (mail_list[1].checked==true)
+			{ mailing_check = mail_list[1].value;
+			}
+		if (mail_list[0].checked==false && mail_list[1].checked==false)
+
+			{ alert ("Please determine if you would like to stay on our mailing list.");
+			return;
+			}
+	//Submit Conformation
+		submit=window.confirm("Campus tour form complete! \n\nIs your information correct?");
+			if (submit==true)
+				{
+				window.location.href= "Book Tour Confirmation.html";
+				}
+
+	}
+</script>
+<style>
+	body{
+		background-attachment:fixed;
+		background-position:center;
+	}
+	a:link{
+		color: #29395a;
+		text-decoration:none;
+	}
+
+	a:visited{
+		color: #29395a;
+		text-decoration:none;
+	}
+
+</style>
+<body bgcolor="c2c1c6" background="Header_Back.jpg">
+<center><font face="Thonburi" size=+5>Campus Tour Form</font><br><br>
+<table width="700"><tr><td><font size=+1>
+Surname<br><input type="text" size="35" id="surname"><br><br></tr><tr><td>
+First name<br><input type="text" size="35" id="fname"><br><br></tr><tr><td>
+Date of birth<br><table cellpadding="3"><tr><td>Day<td>Month<td>Year</tr><tr><td><select name="day" id="day"><br>
+	<option value="empty">Select a day</option><br>
+	<option value="01">01</option><br>
+	<option value="02">02</option><br>
+	<option value="03">03</option><br>
+	<option value="04">04</option><br>
+	<option value="05">05</option><br>
+	<option value="06">06</option><br>
+	<option value="07">07</option><br>
+	<option value="08">08</option><br>
+	<option value="09">09</option><br>
+	<option value="10">10</option><br>
+	<option value="11">11</option><br>
+	<option value="12">12</option><br>
+	<option value="13">13</option><br>
+	<option value="14">14</option><br>
+	<option value="15">15</option><br>
+	<option value="16">16</option><br>
+	<option value="17">17</option><br>
+	<option value="18">18</option><br>
+	<option value="19">19</option><br>
+	<option value="20">20</option><br>
+	<option value="21">21</option><br>
+	<option value="22">22</option><br>
+	<option value="23">23</option><br>
+	<option value="24">24</option><br>
+	<option value="25">25</option><br>
+	<option value="26">26</option><br>
+	<option value="27">27</option><br>
+	<option value="28">28</option><br>
+	<option value="29">29</option><br>
+	<option value="30">30</option><br>
+	<option value="31">31</option><br>
+</select><td><select name="month" id="month"><br>
+	<option value="empty">Select a month</option><br>
+	<option value="01">01</option><br>
+	<option value="02">02</option><br>
+	<option value="03">03</option><br>
+	<option value="04">04</option><br>
+	<option value="05">05</option><br>
+	<option value="06">06</option><br>
+	<option value="07">07</option><br>
+	<option value="08">08</option><br>
+	<option value="09">09</option><br>
+	<option value="10">10</option><br>
+	<option value="11">11</option><br>
+	<option value="12">12</option><br>
+</select><td><select name="year" id="year"><br>
+	<option value="empty">Select a year</option><br>
+	<option value="1999">1999</option><br>
+	<option value="1998">1998</option><br>
+	<option value="1997">1997</option><br>
+	<option value="1996">1996</option><br>
+	<option value="1995">1995</option><br>
+	<option value="1994">1994</option><br>
+	<option value="1993">1993</option><br>
+	<option value="1992">1992</option><br>
+	<option value="1991">1991</option><br>
+	<option value="1990">1990</option><br>
+	<option value="1989">1989</option><br>
+	<option value="1988">1988</option><br>
+	<option value="1987">1987</option><br>
+	<option value="1986">1986</option><br>
+	<option value="1985">1985</option><br>
+	<option value="1984">1984</option><br>
+	<option value="1983">1983</option><br>
+	<option value="1982">1982</option><br>
+	<option value="1981">1981</option><br>
+	<option value="1980">1980</option><br>
+	<option value="1979">1979</option><br>
+	<option value="1978">1978</option><br>
+	<option value="1977">1977</option><br>
+	<option value="1976">1976</option><br>
+	<option value="1975">1975</option><br>
+	<option value="1974">1974</option><br>
+	<option value="1973">1973</option><br>
+	<option value="1972">1972</option><br>
+	<option value="1971">1971</option><br>
+	<option value="1970">1970</option><br>
+	<option value="1969">1969</option><br>
+	<option value="1968">1968</option><br>
+	<option value="1967">1967</option><br>
+	<option value="1966">1966</option><br>
+	<option value="1965">1965</option><br>
+	<option value="1964">1964</option><br>
+	<option value="1963">1963</option><br>
+	<option value="1962">1962</option><br>
+	<option value="1961">1961</option><br>
+	<option value="1960">1960</option><br>
+	<option value="1959">1959</option><br>
+	<option value="1958">1958</option><br>
+	<option value="1957">1957</option><br>
+	<option value="1956">1956</option><br>
+	<option value="1955">1955</option><br>
+	<option value="1954">1954</option><br>
+	<option value="1953">1953</option><br>
+	<option value="1952">1952</option><br>
+	<option value="1951">1951</option><br>
+	<option value="1950">1950</option><br>
+	<option value="1949">1949</option><br>
+	<option value="1948">1948</option><br>
+</select></table><br><br>
+Email address (please ensure that you enter this correctly)<br><input type="text" size="35" id="email"><br><br>
+
+Contact telephone number (preferably mobile)<br><input type="text" id="number" size="35"><br><br>
+
+Please enter your full postal address, including postcode<br><input type="text" size="75" id="address"><br><br>
+
+Please indicate which campus tour you would like to attend<br><br>
+<input type="radio" name="tour_date" value="Wednesday 31st July, 3-4pm" checked="checked">Wednesday 31st July, 3-4pm</span><br><br>
+Number of guests<br><br>
+<input type="radio" name="guests" value="0"> 0</span><br>
+<input type="radio" name="guests" value="1"> 1</span><br><br>
+
+Would you like to stay on our mailing list? This is to receive other relevant information. All data will be securely held and used by London University in accordance with the Data Protection Act 1998. It will not be passed to third parties.<br><br>
+<input type="radio" name="mail" value="Yes"> Yes</span><br>
+<input type="radio" name="mail" value="No"> No</span><br><br>
+<center><img src="Tour Submit.png" onmouseover="this.src=' Tour Submit_Over.png';" onmouseout="this.src='Tour Submit.png';" onmousedown="this.src='Tour Submit_Click.png';" OnClick="form();">

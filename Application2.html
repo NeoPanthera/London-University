@@ -1,0 +1,154 @@
+<html>
+<head>
+<title>Application</title>
+<script type="text/javascript">
+	//Return to Page 1
+	function page1_return()
+	{window.location.href= "Application.html";
+	}
+	
+	//Felony Showing
+	function show_hide() 
+	{
+		var div_ref = document.getElementById("box3");
+		var felony = document.getElementsByName("felony");
+		if (felony[0].checked==true)
+			{ div_ref.style.visibility = "visible";
+			}
+		else
+		{ 
+			div_ref.style.visibility = "hidden";
+		}
+	}
+	function page2()
+	{
+	//Term
+		var term_date = document.getElementsByName("term_date");
+		var enrollment = document.getElementsByName("enrollment");
+		if (enrollment[0].checked==false && enrollment[1].checked==false)
+			{ alert ("Please determine your enrollment status.");
+			return;
+			}
+	//Housing
+		var commute = document.getElementsByName("commute");
+		if (commute[0].checked==false && commute[1].checked==false)
+			{ alert ("Please determine if you will be commuting.");
+			return;
+			}
+		var housing = document.getElementsByName("housing");
+		if (housing[0].checked==false && housing[1].checked==false)
+			{ alert ("Please determine if you will stay in housing");
+			return;
+			}
+	//Admissions
+		var admission = document.getElementById("admission").value;
+		if (admission == "empty")
+			{ alert ("Please enter the program you wish to sutdy at London University.");
+			return;
+			}
+	//Activity
+		var activity = document.getElementById("activity").value;
+	//Honour
+		var honours = document.getElementById("honours").value;
+	//Personal Statement
+		var personal = document.getElementById("personal").value;
+	//Felony
+		var felony = document.getElementsByName("felony");
+		if (felony[0].checked==true)
+			{ var felony_input = document.getElementById("felony_input").value;
+			if (felony_input == "")
+				{ alert ("Please describe the felony/felonies.");
+				return;
+				}
+			}
+		if (felony[0].checked==false && felony[1].checked==false)
+			{ alert ("Please enter if you ever been charged or convicted of a felony.");
+			return;
+			}
+		
+	//Confirmation
+		var certify = document.getElementById("certify");
+		if (certify.checked==false)
+			{ alert ("Please check the box to complete your application.");
+			return;
+			}
+	//Submit
+		window.location.href= "Application Complete.html";
+	}
+</script>
+<style type="text/css">
+	a:link{
+		color: #29395a;
+	}
+
+	a:visited{
+		color: #29395a;
+	}
+	body{
+		background-attachment:fixed;
+		background-position:center;
+	}
+</style>
+<body bgcolor="c2c1c6" background="Header_Back.jpg">
+<center><font face="Thonburi" size=+5>Application</font><br><font face="Thonburi" size=+3>Page 2</font><br><br>
+<table width="700"><tr><td>
+
+<h2>Term</h2><br>
+For which term are you applying?<br>
+<input type="radio" name="term_date" value="Fall 2012" checked="checked">Fall 2013<br><br>
+Enrollment Status<br>
+<input type="Radio" name="enrollment" value="full time">Full Time   <input type="Radio" name="enrollment" value="part time">Part Time<br><br>
+
+<h2>Housing</h2><br>
+Will you be commuting from the home of a parent or guardian?<br>
+<input type="Radio" name="commute" value="yes">Yes   <input type="Radio" name="commute" value="no">No<Br><Br>
+Will you be living in the university housing?<br>
+<input type="Radio" name="housing" value="yes">Yes   <input type="Radio" name="housing" value="no">No<br><br>
+
+<h2>What program do you wish to study at London University?</h2><br>
+Admissions (4 years)<br>
+<select name="admission" id="admission"><br>
+	<option value="empty">Select an admission</option><br>
+	<option value="Accounting">Accounting</option><br>
+	<option value="Business Administration">Business Administration</option><br>
+	<option value="Chemistry">Chemistry</option><br>
+	<option value="Computer Science">Computer Science</option><br>
+	<option value="Economics">Economics</option><br>
+	<option value="English Literary Studies">English Literary Studies</option><br>
+	<option value="Finance">Finance</option><br>
+	<option value="Graphic Design">Graphic Design</option><br>
+	<option value="Mathematics">Mathematics</option><br>
+	<option value="Music">Music</option><br>
+	<option value="Nursing">Nursing</option><br>
+	<option value="Psychology">Psychology</option><br>
+	<option value="Spanish">Spanish</option><br>
+	<option value="Undecided Business">Undecided Business</option><br>
+</select><br><br>
+
+
+<h2>Activites</h2><br>
+Activity (Football, Cricket, etc.)<br>
+<input type="text" id="activity" size="75"><br><br>
+
+<h2>Honours and Leadership</h2><br>
+Briefly describe the academic honours you have received, leadership positions you have held or other activities in which you have participated.<br>
+<textarea id="honours" name="honours" rows="5" cols="30"></textarea><br><br>
+
+
+<h2>Personal Statement</h2><br>
+We are not requiring you to write an essay. However, if you would like to tell us anything else about yourself, you may do so in the space below.<br>
+<textarea id="personal" name="personal" rows="10" cols="100"></textarea><br><br>
+
+<h2>We have to ask...</h2><br>
+Have you ever been charged or convicted of a felony?<br>
+<input type="Radio" name="felony" value="yes" onclick="show_hide();">Yes   <input type="Radio" name="felony" value="no" onclick="show_hide();">No<br><br>
+<div id="box3" name="box3" style="visibility:hidden;">Please describe your felony/felonies <br><textarea id="felony_input" name="felony_input" rows="2" cols="30"></textarea></div><br><br>
+
+<h2>You're almost done!</h2><br>
+
+<font size=+1>After you hit the Submit button, your application will be sent to London University.<br><br>
+<input type="checkbox" value="certify," id="certify"><b>I certify that, to the best of my knowledge, all the information contained in this document is true and current. I grant my high school permission to release my transcripts to London University.<br><br>
+
+<center><img src="Page 2.png" onmouseover="this.src=' Page 2_Over.png';" onmouseout="this.src='Page 2.png';" onmousedown="this.src='Page 2_Click.png';" OnClick="page1_return();">
+ <img src="Tour Submit.png" onmouseover="this.src='Tour Submit_Over.png';" onmouseout="this.src='Tour Submit.png';" onmousedown="this.src='Tour Submit_Click.png';" OnClick="page2();">
+</table>

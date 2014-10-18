@@ -1,0 +1,28 @@
+<html>
+<head>
+<title>London University</title>
+<script>
+var already=false;
+var frameset;
+window.onload=function(){frameset=document.getElementById("foo");};
+setTimeout(modify,5000);
+function modify()
+{
+    already=true;
+    frameset.setAttribute("rows","295,30,*%");
+}
+function big()
+{
+    if(already)frameset.setAttribute("rows","295,30,*%");
+}
+function small()
+{
+    if(already)frameset.setAttribute("rows","215,30,*%");
+}
+</script>
+</head>
+<frameset rows="215,30,*%" border="0" id="foo">
+	<frame src="Header.html" onmouseover="big();" onmouseout="small();">
+	<frame src="Border.html">
+	<frame src="Homepage.html" name="sking">
+</frameset>

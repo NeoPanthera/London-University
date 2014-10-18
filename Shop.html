@@ -1,0 +1,278 @@
+<html>
+<head>
+<title>Shop</title>
+<script>
+	function shop()
+	{
+	//Names
+		var fname = document.getElementById("fname").value;
+		if (fname == "")
+			{ alert ("Please enter your first name.");
+			return;
+			}
+		var sname = document.getElementById("sname").value;
+		if (sname == "")
+			{ alert ("Please enter your surname.");
+			return;
+			}
+	//Address
+		var address = document.getElementById("address").value;
+		if (address == "")
+			{ alert ("Please enter your full postal address.");
+			return;
+			}
+	//Phone
+		if (document.getElementById("number").value.search(/\d{3}\-\d{3}\-\d{4}/)==-1)
+			{ 
+			alert("Please enter a valid phone number with the format XXX-XXX-XXXX.");
+			return;
+			}
+		submit=window.confirm("Order Complete!\n\nIs this order ok?");
+		if (submit==true)
+			{alert ("An email will be sent to you with the bill. Thank you for shopping at London University.")
+			}
+	}
+</script>
+<style>
+	body{
+		background-attachment:fixed;
+		background-position:center;
+	}
+	a:link{
+		color: #29395a;
+		text-decoration:none;
+	}
+
+	a:visited{
+		color: #29395a;
+		text-decoration:none;
+	}
+
+</style>
+<body bgcolor="c2c1c6" background="Header_Back.jpg">
+<center><font face="Thonburi" size=+5>Shop</font><br><br>
+<table width="700" border="2" bordercolor="29395a">
+<tr><td><center><font size=+3><b>Shirts<br><img src="Shirt_blank.jpg">
+<td><center><font size=+3><b>Hats<br><img src="Hat_Logo.png">
+</tr><tr><td>Please enter the amount of shirt(s) you want in each size
+<br>Size: Kids Small<select id="ksmall"><br>
+	<option value="00">00</option><br>
+	<option value="01">01</option><br>
+	<option value="02">02</option><br>
+	<option value="03">03</option><br>
+	<option value="04">04</option><br>
+	<option value="05">05</option><br>
+	<option value="06">06</option><br>
+	<option value="07">07</option><br>
+	<option value="08">08</option><br>
+	<option value="09">09</option><br>
+	<option value="10">10</option><br>
+	<option value="11">11</option><br>
+</select>
+<br>Size: Kids Medium<select id="kmedium"><br>
+	<option value="00">00</option><br>
+	<option value="01">01</option><br>
+	<option value="02">02</option><br>
+	<option value="03">03</option><br>
+	<option value="04">04</option><br>
+	<option value="05">05</option><br>
+	<option value="06">06</option><br>
+	<option value="07">07</option><br>
+	<option value="08">08</option><br>
+	<option value="09">09</option><br>
+	<option value="10">10</option><br>
+	<option value="11">11</option><br>
+</select>
+<br>Size: Kids Large<select id="klarge"><br>
+	<option value="00">00</option><br>
+	<option value="01">01</option><br>
+	<option value="02">02</option><br>
+	<option value="03">03</option><br>
+	<option value="04">04</option><br>
+	<option value="05">05</option><br>
+	<option value="06">06</option><br>
+	<option value="07">07</option><br>
+	<option value="08">08</option><br>
+	<option value="09">09</option><br>
+	<option value="10">10</option><br>
+	<option value="11">11</option><br>
+</select>
+<br>Size: Kids XL<select id="kxl"><br>
+	<option value="00">00</option><br>
+	<option value="01">01</option><br>
+	<option value="02">02</option><br>
+	<option value="03">03</option><br>
+	<option value="04">04</option><br>
+	<option value="05">05</option><br>
+	<option value="06">06</option><br>
+	<option value="07">07</option><br>
+	<option value="08">08</option><br>
+	<option value="09">09</option><br>
+	<option value="10">10</option><br>
+	<option value="11">11</option><br>
+</select>
+<br>Size: Adult Men Small<select id="msmall"><br>
+	<option value="00">00</option><br>
+	<option value="01">01</option><br>
+	<option value="02">02</option><br>
+	<option value="03">03</option><br>
+	<option value="04">04</option><br>
+	<option value="05">05</option><br>
+	<option value="06">06</option><br>
+	<option value="07">07</option><br>
+	<option value="08">08</option><br>
+	<option value="09">09</option><br>
+	<option value="10">10</option><br>
+	<option value="11">11</option><br>
+</select>
+<br>Size: Adult Men Medium<select id="mmedium"><br>
+	<option value="00">00</option><br>
+	<option value="01">01</option><br>
+	<option value="02">02</option><br>
+	<option value="03">03</option><br>
+	<option value="04">04</option><br>
+	<option value="05">05</option><br>
+	<option value="06">06</option><br>
+	<option value="07">07</option><br>
+	<option value="08">08</option><br>
+	<option value="09">09</option><br>
+	<option value="10">10</option><br>
+	<option value="11">11</option><br>
+</select>
+<br>Size: Adult Men Large<select id="mlarge"><br>
+	<option value="00">00</option><br>
+	<option value="01">01</option><br>
+	<option value="02">02</option><br>
+	<option value="03">03</option><br>
+	<option value="04">04</option><br>
+	<option value="05">05</option><br>
+	<option value="06">06</option><br>
+	<option value="07">07</option><br>
+	<option value="08">08</option><br>
+	<option value="09">09</option><br>
+	<option value="10">10</option><br>
+	<option value="11">11</option><br>
+</select>
+<br>Size: Adult Men XL<select id="mxl"><br>
+	<option value="00">00</option><br>
+	<option value="01">01</option><br>
+	<option value="02">02</option><br>
+	<option value="03">03</option><br>
+	<option value="04">04</option><br>
+	<option value="05">05</option><br>
+	<option value="06">06</option><br>
+	<option value="07">07</option><br>
+	<option value="08">08</option><br>
+	<option value="09">09</option><br>
+	<option value="10">10</option><br>
+	<option value="11">11</option><br>
+</select>
+<br>Size: Adult Men XXL<select id="mxxl"><br>
+	<option value="00">00</option><br>
+	<option value="01">01</option><br>
+	<option value="02">02</option><br>
+	<option value="03">03</option><br>
+	<option value="04">04</option><br>
+	<option value="05">05</option><br>
+	<option value="06">06</option><br>
+	<option value="07">07</option><br>
+	<option value="08">08</option><br>
+	<option value="09">09</option><br>
+	<option value="10">10</option><br>
+	<option value="11">11</option><br>
+</select>
+<br>Size: Adult Women Small<select id="wsmall"><br>
+	<option value="00">00</option><br>
+	<option value="01">01</option><br>
+	<option value="02">02</option><br>
+	<option value="03">03</option><br>
+	<option value="04">04</option><br>
+	<option value="05">05</option><br>
+	<option value="06">06</option><br>
+	<option value="07">07</option><br>
+	<option value="08">08</option><br>
+	<option value="09">09</option><br>
+	<option value="10">10</option><br>
+	<option value="11">11</option><br>
+</select>
+<br>Size: Adult Women Medium<select id="wmedium"><br>
+	<option value="00">00</option><br>
+	<option value="01">01</option><br>
+	<option value="02">02</option><br>
+	<option value="03">03</option><br>
+	<option value="04">04</option><br>
+	<option value="05">05</option><br>
+	<option value="06">06</option><br>
+	<option value="07">07</option><br>
+	<option value="08">08</option><br>
+	<option value="09">09</option><br>
+	<option value="10">10</option><br>
+	<option value="11">11</option><br>
+</select>
+<br>Size: Adult Women Large<select id="wlarge"><br>
+	<option value="00">00</option><br>
+	<option value="01">01</option><br>
+	<option value="02">02</option><br>
+	<option value="03">03</option><br>
+	<option value="04">04</option><br>
+	<option value="05">05</option><br>
+	<option value="06">06</option><br>
+	<option value="07">07</option><br>
+	<option value="08">08</option><br>
+	<option value="09">09</option><br>
+	<option value="10">10</option><br>
+	<option value="11">11</option><br>
+</select>
+<br>Size: Adult Women XL<select id="wxl"><br>
+	<option value="00">00</option><br>
+	<option value="01">01</option><br>
+	<option value="02">02</option><br>
+	<option value="03">03</option><br>
+	<option value="04">04</option><br>
+	<option value="05">05</option><br>
+	<option value="06">06</option><br>
+	<option value="07">07</option><br>
+	<option value="08">08</option><br>
+	<option value="09">09</option><br>
+	<option value="10">10</option><br>
+	<option value="11">11</option><br>
+</select>
+<br>Size: Adult Women XXL<select id="wxxl"><br>
+	<option value="00">00</option><br>
+	<option value="01">01</option><br>
+	<option value="02">02</option><br>
+	<option value="03">03</option><br>
+	<option value="04">04</option><br>
+	<option value="05">05</option><br>
+	<option value="06">06</option><br>
+	<option value="07">07</option><br>
+	<option value="08">08</option><br>
+	<option value="09">09</option><br>
+	<option value="10">10</option><br>
+	<option value="11">11</option><br>
+</select></td>
+<td>Please enter the amount of hat(s) you want<br><select id="hats"><br>
+	<option value="00">00</option><br>
+	<option value="01">01</option><br>
+	<option value="02">02</option><br>
+	<option value="03">03</option><br>
+	<option value="04">04</option><br>
+	<option value="05">05</option><br>
+	<option value="06">06</option><br>
+	<option value="07">07</option><br>
+	<option value="08">08</option><br>
+	<option value="09">09</option><br>
+	<option value="10">10</option><br>
+	<option value="11">11</option><br>
+</select></td>
+</tr><tr>
+<td colspan="2"><Br><h3>Please enter your name</h3><br>
+First Name<br>
+<input type="Text" id="fname"><br><br>
+Surname<br>
+<input type="Text" id="sname"><br><br>
+
+Address<br>
+Please enter your full postal address, including postcode<br><input type="text" size="75" id="address"><br><br>
+Contact telephone number (preferably mobile)<br><input type="text" id="number" size="35"><br><br>
+<img src="Tour Submit.png" onmouseover="this.src='Tour Submit_Over.png';" onmouseout="this.src='Tour Submit.png';" onmousedown="this.src='Tour Submit_Click.png';" OnClick="shop();">
